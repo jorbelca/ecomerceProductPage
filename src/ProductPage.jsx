@@ -8,7 +8,7 @@ export default function ProductPage() {
   return (
     <div className="product-page">
       <div className="product-images">
-        <img src={img} alt="product-img" width={"330"} height={"330"} />
+        <img src={img} alt="product-img" width={"250"} height={"250"} />
         <div className="img-thumbnails">
           <img
             src={`${process.env.PUBLIC_URL}/assets/images/image-product-1-thumbnail.jpg`}
@@ -65,7 +65,14 @@ export default function ProductPage() {
           Featuring a durable rubber outer sole, they’ll withstand everything
           the weather can offer.
         </div>
-        <div className="price"> $125.00 50% $250.00 </div>
+        <div className="price_discount">
+          <div className="price">
+            {" "}
+            $125.00</div>
+            <div className="discount">50%</div>
+          </div>
+          <div className="original-price">$250.00</div>
+        
         <div className="add-to-cart">
           <div className="add-subtract">
             <svg

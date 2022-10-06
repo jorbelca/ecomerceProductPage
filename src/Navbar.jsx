@@ -2,8 +2,8 @@ import React from "react"
 
 export default function Navbar() {
   return (
-    <div className="navbar">
-      <nav>
+    <nav>
+      <div className="navbar">
         <div className="nav-left">
           <svg width="138" height="20" xmlns="http://www.w3.org/2000/svg">
             <path
@@ -28,12 +28,12 @@ export default function Navbar() {
             <img
               src={`${process.env.PUBLIC_URL}/assets/images/image-avatar.png`}
               alt="avatar img"
-              width={"40"}
-              height={"40"}
+              width={"30"}
+              height={"30"}
             />
           </div>
         </div>
-      </nav>
-    </div>
+      </div>
+    </nav>
   )
 }
