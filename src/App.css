@@ -11,15 +11,15 @@
 .App {
   font-family: 'Kumbh Sans', sans-serif;
 }
-
-nav {
-  width: 100%;
-  margin: 20px;
-  padding: 0 120px 0 120px;
+hr{
+  height: 1px;
+  margin: 0px 150px 0 150px;
+  background-color: var(--main-greyish-blue);
+  border: none;
 }
 .navbar{
   display: flex;
-  width: 100%;
+  padding: 30px 150px 0 150px;
 }
 .nav-left{
   display: flex;
@@ -27,14 +27,32 @@ nav {
 .nav-right{
   display: flex;
   flex-direction: row;
-  justify-self: flex-end;
+  margin-left: auto;
+  justify-content: flex-end;
   align-items: center;
 }
 .nav-options{
   display: flex;
+  padding:0 20px 0 20px;
+}
+.nav-option{
+  padding:0 15px 0 15px;
+  font-size: 13px;
+}
+.nav-option:hover{
+  border-bottom: 2px solid var(--main-orange);
+}
+.icon:hover{
+  border-radius: 50%;
+  height: 50px;
+  width: 50px;
+  border: 2px solid var(--main-orange);
+}
+.shopping-cart{
+  padding: 0 30px 0 10px;
 }
 .product-images{
-  padding: 180px 140px 180px 180px;
+  padding: 100px 140px 180px 180px;
 }
 .product-images img{
  border-radius: 10px;
@@ -118,20 +136,34 @@ padding: 0px 100px 40px 0px;
   align-content: center;
 }
 .add-to-cart button{
-  padding: 0px 90px 0px 90px;
+  padding: 0px 70px 0px 70px;
   border-radius: 10px;
   border: 0px;
   color: white;
   background-color: var(--main-orange);
   font-family: 'Kumbh Sans', sans-serif;
   font-weight: 700;
+  
 }
-.add-to-cart button .svg{
-  color: white;
-  width: 10px;
-  height: 10px;
+.add-to-cart .btn .svg{
+   padding-right: 20px;
 }
-.add-to-cart button:hover{background-color: var(--main-pale-orange);}
+.btn{
+  display: flex;
+  flex-wrap: nowrap;
+  align-items: center;
+}
+.btn svg{
+fill: white;
+}
+.btn-text{
+  white-space: nowrap;
+}
+.add-to-cart button:hover{
+  background-color: var(--main-pale-orange);
+  box-shadow: 15px 45px 40px var(--main-pale-orange);
+  border: 1px var(--main-pale-orange);
+}
 .add-subtract svg:hover{color:var(--main-pale-orange)}
 footer {
   position:absolute;
@@ -151,5 +183,8 @@ footer {
 @media (max-width:600px) {
   .product-page{
     flex-direction: column;
+  }
+  .product-info{
+    padding-left: 80px;
   }
 }
