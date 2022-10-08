@@ -1,64 +1,16 @@
 import React, { useState } from "react"
+import Gallery from "./Gallery"
 
 export default function ProductPage() {
   const [counter, setCounter] = useState(0)
-  const [img, setImg] = useState(
-    `${process.env.PUBLIC_URL}/assets/images/image-product-1.jpg`
-  )
-  const handleClick = () => {
-    
-  }
+
+  const handleClick = () => {}
+  
   return (
     <>
       <div className="product-page">
         <div className="product-images">
-          <img src={img} alt="product-img" width={"400"} height={"400"} />
-          <div className="img-thumbnails">
-            <img
-              src={`${process.env.PUBLIC_URL}/assets/images/image-product-1-thumbnail.jpg`}
-              alt="product thumbnail"
-              width={"80"}
-              height={"80"}
-              onClick={() =>
-                setImg(
-                  `${process.env.PUBLIC_URL}/assets/images/image-product-1.jpg`
-                )
-              }
-            />
-            <img
-              src={`${process.env.PUBLIC_URL}/assets/images/image-product-2-thumbnail.jpg`}
-              alt="product thumbnail"
-              width={"80"}
-              height={"80"}
-              onClick={() =>
-                setImg(
-                  `${process.env.PUBLIC_URL}/assets/images/image-product-2.jpg`
-                )
-              }
-            />
-            <img
-              src={`${process.env.PUBLIC_URL}/assets/images/image-product-3-thumbnail.jpg`}
-              alt="product thumbnail"
-              width={"80"}
-              height={"80"}
-              onClick={() =>
-                setImg(
-                  `${process.env.PUBLIC_URL}/assets/images/image-product-3.jpg`
-                )
-              }
-            />
-            <img
-              src={`${process.env.PUBLIC_URL}/assets/images/image-product-4-thumbnail.jpg`}
-              alt="product thumbnail"
-              width={"80"}
-              height={"80"}
-              onClick={() =>
-                setImg(
-                  `${process.env.PUBLIC_URL}/assets/images/image-product-4.jpg`
-                )
-              }
-            />
-          </div>
+          <Gallery />
         </div>
 
         <div className="product-info">

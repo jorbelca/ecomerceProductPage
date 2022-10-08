@@ -7,6 +7,9 @@ export default function Navbar() {
       <nav>
         <div className="navbar">
           <div className="nav-left">
+            <div className="menu-mobile">
+              <hr />
+            </div>
             <div className="logo">
               <svg width="138" height="30" xmlns="http://www.w3.org/2000/svg">
                 <path
