@@ -4,7 +4,9 @@ export default function Gallery() {
   const [img, setImg] = useState(
     `${process.env.PUBLIC_URL}/assets/images/image-product-1.jpg`
   )
-  const showImage = () => {}
+  const showModal = () => {
+    document.querySelector(".modal").style = { display: "" }
+  }
   let width = 400
   let height = 400
   return (
@@ -14,7 +16,7 @@ export default function Gallery() {
         alt="product-img"
         width={width}
         height={height}
-        onClick={showImage}
+        onClick={() => showModal()}
       />
       <div className="img-thumbnails">
         <img

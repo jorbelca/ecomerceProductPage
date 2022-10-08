@@ -1,11 +1,19 @@
 import React, { useState } from "react"
 import Gallery from "./Gallery"
 
-export default function ProductPage() {
+export default function ProductPage(props) {
   const [counter, setCounter] = useState(0)
 
-  const handleClick = () => {}
-  
+  const handleClick = () => {
+    props.func({
+      num: counter,
+      name: "Fall Limited Edition Sneakers",
+      price: "$125.00",
+      image:
+        "${process.env.PUBLIC_URL}/assets/images/image-product-1-thumbnail.jpg",
+    })
+  }
+
   return (
     <>
       <div className="product-page">
