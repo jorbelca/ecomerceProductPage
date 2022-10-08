@@ -8,8 +8,8 @@ export default function ProductPage(props) {
     props.func({
       num: counter,
       name: "Fall Limited Edition Sneakers",
-      price: "$125.00",
-      image:
+      price: 125.00,
+      img:
         "${process.env.PUBLIC_URL}/assets/images/image-product-1-thumbnail.jpg",
     })
   }
