@@ -2,7 +2,7 @@ import React, { useState } from "react"
 
 export default function Gallery() {
   let [nImg, setNImg] = useState(1)
-  const [showModal, setShowModal] = useState(true)
+  const [showModal, setShowModal] = useState(false)
   const { innerWidth } = window
   return (
     <div>
