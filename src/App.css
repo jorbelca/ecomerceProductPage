@@ -19,7 +19,8 @@ hr{
   border: none;
 }
 .menu-mobile{
-padding-right: 10px;
+  padding-right: 10px;
+  padding-bottom: 5px;
 }
 .navbar{
   display: flex;
@@ -124,6 +125,10 @@ span.num{
 }
 .product-images img{
  border-radius: 10px;
+}
+.central-img img{
+  width: 400px;
+  height: 400px;
 }
 .img-thumbnails{
   padding-top: 20px;
@@ -233,9 +238,10 @@ fill: white;
   border: 1px var(--main-pale-orange);
 }
 .add-subtract svg:hover{color:var(--main-pale-orange)}
+
 footer {
   position:absolute;
-  bottom:0;
+  bottom:0px;
   width:100%;
   height:50px; 
 }
@@ -264,6 +270,10 @@ footer {
   height: 60%;
   
 }
+.modal .central-img img{
+  width: 500px;
+  height:500px
+}
 .modal-gallery img{
   border-radius: 10px;
 }
@@ -289,7 +299,7 @@ footer {
 .previous-btn{
   display: flex;
   align-items: center;
-  transform: translateX(470px);
+  transform: translateX(570px);
 }
 .next-btn.selector-btn svg{
   transform: translateY(40%);
@@ -307,9 +317,82 @@ footer {
     padding-left: 80px;
   }
   .nav-options{
-  flex-direction: column;
+    flex-direction: column;
+    margin-top: 250px;
+    transform: translateX(-180px);
+    background-color: white;
+    color: black;
+    width: 50%;
+    height: 100%;
+    z-index: 2;
+    display: none;
+  }
+  hr{
+    display: none;
+  }
+  .navbar{
+    padding: 0 30px;
+  }
+  .add-to-cart{
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+  }
+  .add-subtract{
+    width: 100%;
+    justify-content: space-between;
+    margin-right: 0;
+    margin-bottom: 20px;
+  }
+  .add-to-cart button{
+    width: 100%;
+    height: 50px;
+    justify-content: center;
+  }
+  .add-to-cart .btn{
+    justify-content: center;
+  }
+  .icon img{
+    width: 30px;
+    height: 30px;
+  }
+  .icon:hover{
+    width: 30px;
+    height: 30px;
+  }
+}
+
+@media (max-width:500px) {
+  .product-images{
+    width: 100%;
+    padding: 0 0 40px 0;    
+  }
+  .product-images div img{
+    width: 100%;
+    border-radius: 0;
+  }
+  .img-thumbnails{
+    display: none;
   }
   
+  .product-info{
+    padding: 0 30px;
+    margin: auto;
+  }
+  .original-price{
+    float: right;
+margin-top: -40px;
+  }
+  .next-btn{
+    display: flex;
+    align-items: center;
+    transform: translateX(20px);
+  }
+  .previous-btn{
+    display: flex;
+    align-items: center;
+    transform: translateX(570px);
+  }
 }
 
 @media (min-width: 800px) {

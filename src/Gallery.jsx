@@ -7,17 +7,11 @@ export default function Gallery() {
   const showModal = () => {
     document.querySelector(".modal").style = { display: "" }
   }
-  let width = 400
-  let height = 400
   return (
     <div>
-      <img
-        src={img}
-        alt="product-img"
-        width={width}
-        height={height}
-        onClick={() => showModal()}
-      />
+      <div className="central-img">
+        <img src={img} alt="product-img" onClick={() => showModal()} />
+      </div>
       <div className="img-thumbnails">
         <img
           src={`${process.env.PUBLIC_URL}/assets/images/image-product-1-thumbnail.jpg`}
