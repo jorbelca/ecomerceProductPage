@@ -3,6 +3,7 @@ import React, { useState } from "react"
 export default function Gallery() {
   let [nImg, setNImg] = useState(1)
   const [showModal, setShowModal] = useState(true)
+  const { innerWidth } = window
   return (
     <div>
       <div className={!showModal ? "" : "modal"}>
@@ -17,6 +18,9 @@ export default function Gallery() {
             className="previous-btn selector-btn"
             onClick={() => {
               if (nImg < 4) setNImg(nImg++)
+            }}
+            style={{
+              display: !showModal && innerWidth > 500 ? "none" : "",
             }}
           >
             <svg width="13" height="18" xmlns="http://www.w3.org/2000/svg">
@@ -33,6 +37,9 @@ export default function Gallery() {
             className="next-btn selector-btn"
             onClick={() => {
               if (nImg > 0) setNImg(nImg--)
+            }}
+            style={{
+              display: !showModal && innerWidth > 500 ? "none" : "",
             }}
           >
             <svg width="12" height="18" xmlns="http://www.w3.org/2000/svg">

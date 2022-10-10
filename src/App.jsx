@@ -1,7 +1,6 @@
 import { useState } from "react"
 import "./App.css"
 import Footer from "./Footer"
-
 import Navbar from "./Navbar"
 import ProductPage from "./ProductPage"
 
