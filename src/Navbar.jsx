@@ -1,14 +1,17 @@
 import React, { useState } from "react"
 
 export default function Navbar({ data }) {
-  let showCart = { display: "none" }
-
+  const [showCart, setShowCart] = useState(false)
+  const [showMobileNav, setShowMobileNav] = useState(false)
   return (
     <>
       <nav>
         <div className="navbar">
           <div className="nav-left">
-            <div className="menu-mobile">
+            <div
+              className="menu-mobile"
+              onClick={() => setShowMobileNav(!showMobileNav)}
+            >
               <svg width="16" height="15" xmlns="http://www.w3.org/2000/svg">
                 <path
                   d="M16 12v3H0v-3h16Zm0-6v3H0V6h16Zm0-6v3H0V0h16Z"
@@ -26,7 +29,18 @@ export default function Navbar({ data }) {
                 />
               </svg>
             </div>
-            <div className="nav-options">
+            <div
+              className={
+                !showMobileNav ? "nav-options" : "nav-options nav-mobile"
+              }
+            >
+              <div
+                className="close-btn menu-mobile"
+                onClick={() => setShowMobileNav(!showMobileNav)}
+              >
+                X
+              
+              </div>
               <div className="nav-option">Collections</div>
               <div className="nav-option">Men</div>
               <div className="nav-option">Women</div>
@@ -40,9 +54,7 @@ export default function Navbar({ data }) {
             </span>
             <div
               className="shopping-cart"
-              onClick={() => {
-                showCart = { display: "none" }
-              }}
+              onClick={() => setShowCart(!showCart)}
             >
               <svg width="22" height="20" xmlns="http://www.w3.org/2000/svg">
                 <path
@@ -52,7 +64,12 @@ export default function Navbar({ data }) {
                 />
               </svg>
             </div>
-            <div className="cart-modal" style={showCart}>
+            <div
+              className="cart-modal"
+              style={{
+                display: !showCart ? "none" : "",
+              }}
+            >
               <div className="cart-title">Cart</div>
               <hr />
               <div className="center-modal">
