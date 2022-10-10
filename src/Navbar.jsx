@@ -35,7 +35,7 @@ export default function Navbar({ data }) {
               }
             >
               <div
-                className="close-btn menu-mobile"
+                className="close-btn-menu menu-mobile"
                 onClick={() => setShowMobileNav(!showMobileNav)}
               >
                 X

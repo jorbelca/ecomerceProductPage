@@ -1,18 +1,24 @@
 import React, { useState } from "react"
 
 export default function Gallery() {
-  const [img, setImg] = useState(
-    `${process.env.PUBLIC_URL}/assets/images/image-product-1.jpg`
-  )
+  let [nImg, setNImg] = useState(1)
   const [showModal, setShowModal] = useState(true)
   return (
     <div>
       <div className={!showModal ? "" : "modal"}>
         <div className="modal-gallery">
-          <div className="close-btn" onClick={() => setShowModal(!showModal)}>
+          <div
+            className="close-btn-modal"
+            onClick={() => setShowModal(!showModal)}
+          >
             X
           </div>
-          <span className="previous-btn selector-btn">
+          <span
+            className="previous-btn selector-btn"
+            onClick={() => {
+              if (nImg < 4) setNImg(nImg++)
+            }}
+          >
             <svg width="13" height="18" xmlns="http://www.w3.org/2000/svg">
               <path
                 d="m2 1 8 8-8 8"
@@ -23,7 +29,12 @@ export default function Gallery() {
               />
             </svg>
           </span>
-          <span className="next-btn selector-btn">
+          <span
+            className="next-btn selector-btn"
+            onClick={() => {
+              if (nImg > 0) setNImg(nImg--)
+            }}
+          >
             <svg width="12" height="18" xmlns="http://www.w3.org/2000/svg">
               <path
                 d="M11 1 3 9l8 8"
@@ -36,7 +47,7 @@ export default function Gallery() {
           </span>
           <div className="central-img">
             <img
-              src={img}
+              src={`${process.env.PUBLIC_URL}/assets/images/image-product-${nImg}.jpg`}
               alt="product-img"
               onClick={() => setShowModal(!showModal)}
             />
@@ -47,44 +58,28 @@ export default function Gallery() {
               alt="product thumbnail"
               width={"80"}
               height={"80"}
-              onClick={() =>
-                setImg(
-                  `${process.env.PUBLIC_URL}/assets/images/image-product-1.jpg`
-                )
-              }
+              onClick={() => setNImg(1)}
             />
             <img
               src={`${process.env.PUBLIC_URL}/assets/images/image-product-2-thumbnail.jpg`}
               alt="product thumbnail"
               width={"80"}
               height={"80"}
-              onClick={() =>
-                setImg(
-                  `${process.env.PUBLIC_URL}/assets/images/image-product-2.jpg`
-                )
-              }
+              onClick={() => setNImg(2)}
             />
             <img
               src={`${process.env.PUBLIC_URL}/assets/images/image-product-3-thumbnail.jpg`}
               alt="product thumbnail"
               width={"80"}
               height={"80"}
-              onClick={() =>
-                setImg(
-                  `${process.env.PUBLIC_URL}/assets/images/image-product-3.jpg`
-                )
-              }
+              onClick={() => setNImg(3)}
             />
             <img
               src={`${process.env.PUBLIC_URL}/assets/images/image-product-4-thumbnail.jpg`}
               alt="product thumbnail"
               width={"80"}
               height={"80"}
-              onClick={() =>
-                setImg(
-                  `${process.env.PUBLIC_URL}/assets/images/image-product-4.jpg`
-                )
-              }
+              onClick={() => setNImg(4)}
             />
           </div>
         </div>
